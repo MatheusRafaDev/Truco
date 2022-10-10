@@ -7,10 +7,6 @@ import LoadingBar from 'react-top-loading-bar'
 import Cookies from 'js-cookie'
 
 import Conteudo from "./styled1";
-import Context from './../Context';
-
-import  { useElesContext } from './../Context';
-import ElesContextProvider from './../Context';
 
 export default function Pagina19 (props){
 
@@ -24,33 +20,7 @@ export default function Pagina19 (props){
     SetMaoDeFerro(true);
   };
 
-  function ElesContent() {
-    const [eles, setEles] = useState('eles');
-  
-    return(
-      <div>
-          <input class="eles" type="text" value={eles} onChange={e => setEles(e.target.value)} placeholder="Digite o nome da equipe inimiga" />
-      </div>
-    )
-  }
 
-  function BotaoContent() {
-    const { eles, setEles } = useElesContext();
-    const navigation = useHistory();
-
-    console.log(eles + "botao")
-
-    function Jogo() {
-      setEles(eles)
-      navigation.push('/truco');
-    }
-  
-    return(
-      <div>
-          <button onClick={ Jogo }> Jogar </button>
-      </div>
-    )
-  }
 
 
   return (
@@ -73,9 +43,7 @@ export default function Pagina19 (props){
 
 
             <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/>
-              <ElesContextProvider> 
-                <ElesContent />
-              </ElesContextProvider>
+
             </div>
 
           </div>
@@ -90,9 +58,6 @@ export default function Pagina19 (props){
                 </label>
               </div>
 
-              <ElesContextProvider> 
-                <BotaoContent />
-              </ElesContextProvider>
           </div>
         </div>
     </Conteudo>

@@ -3,16 +3,12 @@ import React, { useState, useRef  } from 'react';
 
 import Conteudo from "./styled2";
 
-import  { useElesContext } from './../Context';
-import ElesContextProvider from './../Context';
-
 export default function Pagina19 (props){
 
   const [pontosum, setPontosUm ] = useState(0);
   const [pontosdois, setPontosDois ] = useState(0);
 
-  const { eles, setEles } = useElesContext();
-
+  const [eles, setEles ] = useState("");
   const [nos, setNos ] = useState("");
   const [maodeferro, SetMaoDeFerro] = useState("");
 
@@ -159,15 +155,6 @@ export default function Pagina19 (props){
     setPontosDois(a)
   }
 
-  function ElesContent() {
-    const { eles, setEles } = useElesContext();
-  
-    return(
-      <div style={{margin: '1em'}}>
-          {eles}
-      </div>
-    )
-  }
 
   return (
 
@@ -185,9 +172,7 @@ export default function Pagina19 (props){
           <div class="Player1">
           
             <div class="eles">
-              <ElesContextProvider> 
-                <ElesContent />
-              </ElesContextProvider>
+
             </div> 
 
             <div class="pontos">{pontosum}</div>
