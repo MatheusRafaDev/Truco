@@ -11,8 +11,7 @@ export default function Pagina19 (props){
   const [pontosum, setPontosUm ] = useState(0);
   const [pontosdois, setPontosDois ] = useState(0);
 
-  // const { eles, setEles } = useElesContext();
-
+  const { eles, setEles } = useElesContext();
 
   const [nos, setNos ] = useState("");
   const [maodeferro, SetMaoDeFerro] = useState("");
@@ -20,13 +19,10 @@ export default function Pagina19 (props){
   const [vitoriasum, SetVitoriasUm]= useState(0);
   const [vitoriasdois, SetVitoriasDois]= useState(0);
 
-
-
   function reset(){
     setPontosUm(0)
     setPontosDois(0)
   }
-
 
   function MaisUmPontoUm() {
     let a = pontosum + 1
@@ -69,9 +65,6 @@ export default function Pagina19 (props){
 
   setPontosDois(a)
   }
-
-
-
 
   function MenosTresPontoUm() {
     
@@ -117,8 +110,6 @@ export default function Pagina19 (props){
 
     setPontosDois(a)
   }
-
-
 
   function MaisSeisPontoUm() {
 

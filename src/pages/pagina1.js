@@ -25,13 +25,11 @@ export default function Pagina19 (props){
   };
 
   function ElesContent() {
-    const { eles, setEles } = useElesContext();
-    console.log(eles + "content")
-    setEles(eles)
+    const [eles, setEles] = useState('eles');
   
     return(
       <div>
-          <input class="eles" type="text" value={eles} onChange={e => setEles(e.target.value)} placeholder="Digite o nome de sua equipe" />
+          <input class="eles" type="text" value={eles} onChange={e => setEles(e.target.value)} placeholder="Digite o nome da equipe inimiga" />
       </div>
     )
   }
@@ -66,14 +64,19 @@ export default function Pagina19 (props){
 
           <div class="Jogadores">
 
-              <div class="game"> Jogadores </div>
-              <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/>
-                <ElesContextProvider> 
-                  <ElesContent />
-                </ElesContextProvider>
-               </div>
-              <br/> 
-              <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/> <input class="nos"  value={nos} onChange={e => setNos(e.target.value)} placeholder="Digite o nome da equipe inimiga"/></div>
+            <div class="game"> Jogadores </div>
+            <br/> 
+
+            <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/> 
+              <input class="nos"  value={nos} onChange={e => setNos(e.target.value)} placeholder="Digite o nome da sua equipe"/>
+            </div> 
+
+
+            <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/>
+              <ElesContextProvider> 
+                <ElesContent />
+              </ElesContextProvider>
+            </div>
 
           </div>
 
