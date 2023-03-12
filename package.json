@@ -12,7 +12,7 @@
     "react-hook-use-state": "^1.1.0",
     "react-router": "^6.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
     "react-top-loading-bar": "^2.1.0",
     "styled-components": "^5.3.3",
     "use-history": "^1.4.1",

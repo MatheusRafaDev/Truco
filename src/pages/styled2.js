@@ -23,7 +23,7 @@ const Conteudo = styled.div`
 
     .game {
         display: flex;
-        margin-top: 1.3em;
+        margin-top: 1em;
         flex-direction: row;
         text-align: center;
         display: flex;
@@ -52,27 +52,8 @@ const Conteudo = styled.div`
     }
 
     .Player1, .Player2 {
-        padding: 1.5rem;
+        padding: 1rem;
     }
-
-
-    .cabecalho {
-        flex-direction: row;
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-        align-content: center;
-        align-items: center;
-        background-color:rgba(0,0,0,0.5);
-        padding-left: 2em;
-        padding-right: 2em;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        border-radius: 1em;
-    }
-
-    
-
     .menosum {
         outline: none;
         border: none;
@@ -171,8 +152,41 @@ const Conteudo = styled.div`
         align-items: center;
     }
 
-   
+    .resposta {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        font-family: fonte1;
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px 4px #000000;
+    }
 
+    .menu {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        align-content: center;
+        align-items: center;
+        background-color:rgba(0,0,0,0.5);
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-radius: 1em;
+    }
+
+    .cabecalho {
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-radius: 1em;
+    }
 
 
 `

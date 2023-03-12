@@ -5,26 +5,47 @@ import { useState } from "react";
 import { useHistory } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 import Cookies from 'js-cookie'
-
 import Conteudo from "./styled1";
+import { useAuth } from "../providers/auth";
+import { Link } from "react-router-dom";
 
 export default function Pagina19 (props){
 
+  
+  const [nos, SetNos] = useState({
+    nos: "",
+  });
+  
+  const [eles, SetEles] = useState({
+    nos: "",
+  });
 
-  const [nos, setNos ] = useState("");
-  const [maodeferro, SetMaoDeFerro] = useState("");
+  const { setUserNos,setUserEles } = useAuth();
+
+  const NameNos = () => {
+    localStorage.setItem("nos", JSON.stringify(nos));
+    setUserNos(nos);
+  };
+
+  const NameEles = () => {
+    localStorage.setItem("eles", JSON.stringify(eles));
+    setUserEles(eles);
+  };
+ 
+  const Jogar = () => {
+    NameNos()
+    NameEles()
+  }
 
   const navigation = useHistory();
+
+  const [maodeferro, SetMaoDeFerro] = useState("");
 
   const MaoDeFerro = () => {
     SetMaoDeFerro(true);
   };
-
-
-
-
+  
   return (
-
     <Conteudo>
         <div class="App">
 
@@ -38,12 +59,11 @@ export default function Pagina19 (props){
             <br/> 
 
             <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/> 
-              <input class="nos"  value={nos} onChange={e => setNos(e.target.value)} placeholder="Digite o nome da sua equipe"/>
+              <input class="nos" placeholder="Digite o nome da sua equipe" onChange={(e) => SetNos({ nos: e.target.value })} />
             </div> 
 
-
-            <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/>
-
+            <div class="users"><img class="user" src="../../assets/user (1).png" alt=""/> 
+              <input class="nos" placeholder="Digite o nome o seu inimigo" onChange={(e) => SetEles({ eles: e.target.value })} />
             </div>
 
           </div>
@@ -57,8 +77,15 @@ export default function Pagina19 (props){
                   <span class="slider round"></span>
                 </label>
               </div>
-
           </div>
+
+          <div class="jogar"></div>
+            <div class="botao">
+               <Link to="/truco">
+                  <button onClick={ Jogar }>jogar</button> 
+               </Link>
+            </div> 
+
         </div>
     </Conteudo>
 
